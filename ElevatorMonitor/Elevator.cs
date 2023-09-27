@@ -128,7 +128,7 @@ namespace ElevatorMonitor
                     Console.ForegroundColor = ConsoleColor.DarkRed;
                     Console.WriteLine("\nThe max weight of 10 is exceeded, please reduce the number of people boarding");
                     Console.WriteLine($"Please note the current weight is {PeopleOnBoard.Count()} only {10 - PeopleOnBoard.Count()} space left\n");
-                    Console.WriteLine($"Please try again with the erecommended numbers");
+                    Console.WriteLine($"Please try again with the recommended numbers");
                     continue;
                 }
 
