@@ -1,18 +1,16 @@
-﻿using System;
+using System;
 namespace ElevatorMonitor
 {
 	public static class ExtensionMethods
 	{
+        //Method to get input from console to navigate through the simulation
 		public static List<Person> NewPerson(bool caller = false)
 		{
-
             string personName = "";
             int personCurrentFloor = 0;
             int personTargetFloor = 0;
             int numberOfPeopleBoarding = 0;
-            List<Person> people = new List<Person>();
-
-
+           
             if(caller)
             {
                 Console.ForegroundColor = ConsoleColor.Gray;
@@ -62,12 +60,20 @@ namespace ElevatorMonitor
                 return null;
             }
 
-            for(int x = 0; x< numberOfPeopleBoarding; x++)
+            return AddPeopleBoardingElevator(personCurrentFloor, personTargetFloor, numberOfPeopleBoarding);
+            
+
+        }
+
+        public static List<Person> AddPeopleBoardingElevator(int currentFloor, int targetFloor, int numberOfPeopleBoarding)
+        {
+            List<Person> people = new List<Person>();
+            for (int x = 0; x < numberOfPeopleBoarding; x++)
             {
-                people.Add(new Person { CurrentFloor = personCurrentFloor, TargetFloor = personTargetFloor });
+                people.Add(new Person { CurrentFloor = currentFloor, TargetFloor = targetFloor });
             }
             return people;
-
+            //Testing
         }
     }
 }
